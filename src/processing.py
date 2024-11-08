@@ -12,8 +12,10 @@ state соответствует указанному значению."""
     return new_list_dict
 
 
-def sort_by_date(list_dict: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+def sort_by_date(list_dict: List[Dict[str, Any]], reverse: bool = True) -> List[Dict[str, Any]]:
     """Функция должна возвращать новый список, отсортированный по дате (date)"""
     sorted_list_dict = []
-    sorted_list_dict = sorted(list_dict, key=lambda x: x["date"], reverse=date)
+    sorted_list_dict = sorted(list_dict, key=lambda x: x["date"], reverse=reverse)
     return sorted_list_dict
+
+#print(sort_by_date())
