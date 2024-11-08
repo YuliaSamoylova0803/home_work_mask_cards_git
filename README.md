@@ -8,7 +8,7 @@
 
 1. Клонируйте репозиторий:
 ```
-git clone https://github.com/username/myblog.git
+git clone git@github.com:YuliaSamoylova0803/home_work_mask_cards_git.git
 ```
 
 2. Установите зависимости:
