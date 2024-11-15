@@ -8,18 +8,23 @@ def mask_account_card(number_str: str) -> str:
     Visa Platinum 7000 79** **** 6361  # выход функции
     Счет 73654108430135874305  # входной аргумент
     Счет **4305  # выход функции"""
-    original_number = number_str.split()[-1]
 
-    if len(original_number) == 16:
-        card_number_1 = get_mask_card_number(original_number)
-        result = f"{number_str[:-16]}{card_number_1}"
-    elif len(original_number) == 20:
-        card_number_2 = get_mask_account(original_number)
-        result = f"{number_str[:-20]}{card_number_2}"
-    return result
+    if number_str == "":
+        return "Строка пуста"
+    else:
+        original_number = number_str.split()[-1]
+        if original_number.isdigit():
+            if len(original_number) == 16:
+                card_number_1 = get_mask_card_number(original_number)
+                result = f"{number_str[:-16]}{card_number_1}"
+            elif len(original_number) == 20:
+                card_number_2 = get_mask_account(original_number)
+                result = f"{number_str[:-20]}{card_number_2}"
+            return result
+        else:
+            raise ValueError("Неверный формат")
 
-
-# print(mask_account_card("Maestro 1596837868705199"))
+#print(mask_account_card(""))
 # print(mask_account_card("Счет 64686473678894779589"))
 # print(mask_account_card("Visa Platinum 8990922113665229"))
 
