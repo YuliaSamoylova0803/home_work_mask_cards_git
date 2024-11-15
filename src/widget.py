@@ -33,4 +33,10 @@ def get_date(data_str: str) -> str:
     """Функция, которая принимает на вход строку с датой в формате
     "2024-03-11T02:26:18.671407"  и возвращает строку с датой в формате
     "ДД.ММ.ГГГГ"  ("11.03.2024")."""
-    return f"{data_str[8:10]}.{data_str[5:7]}.{data_str[:4]}"
+    if data_str == "":
+        return "Строка пуста"
+    else:
+        if len(data_str) != 26:
+            raise ValueError("Неверный формат")
+        else:
+            return f"{data_str[8:10]}.{data_str[5:7]}.{data_str[:4]}"
