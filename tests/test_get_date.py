@@ -20,4 +20,4 @@ def test_get_date_empty():
 
 def test_get_date_invalid_data():
     with pytest.raises(ValueError):
-        get_date("AAAA-AA-AAT02:26:18671407")
+        get_date("2024-03-11T02:26:18671407")
