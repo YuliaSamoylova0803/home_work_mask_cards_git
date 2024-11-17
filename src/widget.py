@@ -24,10 +24,6 @@ def mask_account_card(number_str: str) -> str:
         else:
             raise ValueError("Неверный формат")
 
-#print(mask_account_card(""))
-# print(mask_account_card("Счет 64686473678894779589"))
-# print(mask_account_card("Visa Platinum 8990922113665229"))
-
 
 def get_date(data_str: str) -> str:
     """Функция, которая принимает на вход строку с датой в формате
