@@ -19,3 +19,8 @@ def number_str():
 @pytest.fixture
 def number_str_1():
     return "Счет 64686473678894779589"
+
+
+@pytest.fixture
+def data_str():
+    return "11.03.2024"
