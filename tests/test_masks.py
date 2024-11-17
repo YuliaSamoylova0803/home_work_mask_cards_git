@@ -9,3 +9,12 @@ def test_get_mask_card_number(number_card, expected):
 
 def test_get_mask_card_empty(number_card):
     assert get_mask_card_number("") ==  " ** **** "
+
+
+@pytest.mark.parametrize("account_number, expected", [("45652659515194526295", "**6295"),])
+def test_get_mask_account(account_number, expected):
+    assert get_mask_account(account_number) == expected
+
+
+def test_get_mask_account_empty():
+    assert get_mask_account("") == "**"
