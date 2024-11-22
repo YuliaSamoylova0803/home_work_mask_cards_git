@@ -27,12 +27,19 @@ def transaction_descriptions(transactions: List[Dict[Any, Any]]) -> Generator[in
 # for _ in range(5):
 #     print(next(descriptions))
 
-def card_number_generator(card_number_start: str, card_number_stop: str)-> Generator[str, Any]:
+def card_number_generator(start: str, end: str)-> Generator[str, Any]:
     """Генератор, который выдает номера банковских карт в формате XXXX XXXX XXXX XXXX, где X
  — цифра номера карты. Генератор может сгенерировать номера карт в заданном диапазоне
  от 0000 0000 0000 0001 до 9999 9999 9999 9999. Генератор должен принимать начальное
  и конечное значения для генерации диапазона номеров."""
-    pass
+    for number in range(start, end):
+        card_number = str(number)
+        while len(card_number) < 16:
+            card_number = "0" + card_number
+        yield f"{card_number[0:4]} {card_number[4:8]} {card_number[8:12]} {card_number[12:16]}"
+
+    for card_number in card_number_generator(1, 5):
+        return card_number
 
 
 

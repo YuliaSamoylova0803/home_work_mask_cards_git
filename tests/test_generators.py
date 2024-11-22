@@ -1,8 +1,13 @@
 from collections.abc import generator
+from unittest import expectedFailure
 
 import pytest
+
+from main import descriptions
 from src.generators import filter_by_currency
 from tests.conftest import transactions
+from src.generators import card_number_generator
+from src.generators import transaction_descriptions
 
 
 def test_filter_by_currency(transactions, currency: str= "USD"):
@@ -48,4 +53,19 @@ def test_filter_by_currency_empty():
 
 
 
+def test_card_number_generator(start, end) -> str:
+    card_number = card_number_generator(1, 9999999999999999)
+    assert next(card_number) == "0000 0000 0000 0001"
+    assert next(card_number) == "0000 0000 0000 0002"
+    assert next(card_number) == "0000 0000 0000 0003"
+    assert next(card_number) == "0000 0000 0000 0004"
 
+
+#@pytest.mark.parametrize("expected", ["Перевод организации"])
+def test_transaction_descriptions(transactions):
+    trans = transaction_descriptions(transactions)
+    assert next(trans) == "Перевод организации"
+    assert next(trans) == "Перевод со счета на счет"
+    assert next(trans) == "Перевод со счета на счет"
+    assert next(trans) == "Перевод с карты на карту"
+    assert next(trans) == "Перевод организации"
