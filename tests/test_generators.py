@@ -2,6 +2,7 @@ from collections.abc import generator
 
 import pytest
 from src.generators import filter_by_currency
+from tests.conftest import transactions
 
 
 def test_filter_by_currency(transactions, currency: str= "USD"):
@@ -40,7 +41,10 @@ def test_filter_by_currency(transactions, currency: str= "USD"):
         'to': 'Visa Platinum 8990922113665229'
     }
 
-
+def test_filter_by_currency_empty():
+    usd_transactions = filter_by_currency([], "")
+    with pytest.raises(TypeError):
+        filter_by_currency()
 
 
 
