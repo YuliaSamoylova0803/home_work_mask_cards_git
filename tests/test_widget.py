@@ -12,7 +12,7 @@ from src.widget import get_date, mask_account_card
         ("Счет 73654108430135874305", "**4305"),
     ],
 )
-def test_mask_account_card(number_str_1, expected):
+def test_mask_account_card(number_str_1, expected) -> None:
     assert get_mask_account(number_str_1) == expected
 
 
@@ -26,7 +26,7 @@ def test_mask_account_card(number_str_1, expected):
         ("Visa Gold 5999414228426353", "**6353"),
     ],
 )
-def test_mask_account_card(number_str, expected):
+def test_mask_account_card_(number_str, expected) -> None:
     assert get_mask_account(number_str) == expected
 
 

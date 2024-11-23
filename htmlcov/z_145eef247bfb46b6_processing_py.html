@@ -65,7 +65,7 @@
             <a id="nextFileLink" class="nav" href="z_145eef247bfb46b6_widget_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.6.5">coverage.py v7.6.5</a>,
-            created at 2024-11-17 23:58 +0500
+            created at 2024-11-23 21:43 +0500
         </p>
         <aside class="hidden">
             <button type="button" class="button_next_chunk" data-shortcut="j"></button>
@@ -83,9 +83,9 @@
     <p class="run"><span class="n"><a id="t1" href="#t1">1</a></span><span class="t"><span class="key">from</span> <span class="nam">typing</span> <span class="key">import</span> <span class="nam">Any</span><span class="op">,</span> <span class="nam">Dict</span><span class="op">,</span> <span class="nam">List</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t2" href="#t2">2</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t3" href="#t3">3</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t4" href="#t4">4</a></span><span class="t"><span class="key">def</span> <span class="nam">filter_by_state</span><span class="op">(</span><span class="nam">list_dict</span><span class="op">:</span> <span class="nam">List</span><span class="op">[</span><span class="nam">Dict</span><span class="op">[</span><span class="nam">str</span><span class="op">,</span> <span class="nam">Any</span><span class="op">]</span><span class="op">]</span><span class="op">,</span> <span class="nam">state</span><span class="op">:</span> <span class="nam">str</span> <span class="op">=</span> <span class="str">'EXECUTED'</span><span class="op">)</span> <span class="op">-></span> <span class="nam">List</span><span class="op">[</span><span class="nam">Dict</span><span class="op">[</span><span class="nam">str</span><span class="op">,</span> <span class="nam">Any</span><span class="op">]</span><span class="op">]</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t4" href="#t4">4</a></span><span class="t"><span class="key">def</span> <span class="nam">filter_by_state</span><span class="op">(</span><span class="nam">list_dict</span><span class="op">:</span> <span class="nam">List</span><span class="op">[</span><span class="nam">Dict</span><span class="op">[</span><span class="nam">str</span><span class="op">,</span> <span class="nam">Any</span><span class="op">]</span><span class="op">]</span><span class="op">,</span> <span class="nam">state</span><span class="op">:</span> <span class="nam">str</span> <span class="op">=</span> <span class="str">"EXECUTED"</span><span class="op">)</span> <span class="op">-></span> <span class="nam">List</span><span class="op">[</span><span class="nam">Dict</span><span class="op">[</span><span class="nam">str</span><span class="op">,</span> <span class="nam">Any</span><span class="op">]</span><span class="op">]</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t5" href="#t5">5</a></span><span class="t">    <span class="str">"""&#1060;&#1091;&#1085;&#1082;&#1094;&#1080;&#1103; &#1074;&#1086;&#1079;&#1074;&#1088;&#1072;&#1097;&#1072;&#1077;&#1090; &#1085;&#1086;&#1074;&#1099;&#1081; &#1089;&#1087;&#1080;&#1089;&#1086;&#1082; &#1089;&#1083;&#1086;&#1074;&#1072;&#1088;&#1077;&#1081;, &#1089;&#1086;&#1076;&#1077;&#1088;&#1078;&#1072;&#1097;&#1080;&#1081; &#1090;&#1086;&#1083;&#1100;&#1082;&#1086; &#1090;&#1077; &#1089;&#1083;&#1086;&#1074;&#1072;&#1088;&#1080;, &#1091; &#1082;&#1086;&#1090;&#1086;&#1088;&#1099;&#1093; &#1082;&#1083;&#1102;&#1095;</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t6" href="#t6">6</a></span><span class="t"><span class="str">state &#1089;&#1086;&#1086;&#1090;&#1074;&#1077;&#1090;&#1089;&#1090;&#1074;&#1091;&#1077;&#1090; &#1091;&#1082;&#1072;&#1079;&#1072;&#1085;&#1085;&#1086;&#1084;&#1091; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1102;."""</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t6" href="#t6">6</a></span><span class="t"><span class="str">    state &#1089;&#1086;&#1086;&#1090;&#1074;&#1077;&#1090;&#1089;&#1090;&#1074;&#1091;&#1077;&#1090; &#1091;&#1082;&#1072;&#1079;&#1072;&#1085;&#1085;&#1086;&#1084;&#1091; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1102;."""</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t7" href="#t7">7</a></span><span class="t">    <span class="nam">new_list_dict</span> <span class="op">=</span> <span class="op">[</span><span class="op">]</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t8" href="#t8">8</a></span><span class="t">    <span class="key">for</span> <span class="nam">i</span> <span class="key">in</span> <span class="nam">list_dict</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t9" href="#t9">9</a></span><span class="t">        <span class="key">if</span> <span class="nam">i</span><span class="op">.</span><span class="nam">get</span><span class="op">(</span><span class="str">"state"</span><span class="op">)</span> <span class="op">==</span> <span class="nam">state</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
@@ -107,7 +107,7 @@
             <a class="nav" href="z_145eef247bfb46b6_widget_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.6.5">coverage.py v7.6.5</a>,
-            created at 2024-11-17 23:58 +0500
+            created at 2024-11-23 21:43 +0500
         </p>
     </div>
 </footer>
