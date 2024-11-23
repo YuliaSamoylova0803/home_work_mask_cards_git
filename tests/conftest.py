@@ -127,3 +127,12 @@ def transactions():
         }
     ]
 )
+
+@pytest.fixture
+def start():
+    return 1
+
+
+@pytest.fixture
+def end():
+    return 9999999999999999

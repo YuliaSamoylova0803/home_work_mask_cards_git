@@ -52,7 +52,6 @@ def test_filter_by_currency_empty():
         filter_by_currency()
 
 
-
 def test_card_number_generator(start, end) -> str:
     card_number = card_number_generator(1, 9999999999999999)
     assert next(card_number) == "0000 0000 0000 0001"
