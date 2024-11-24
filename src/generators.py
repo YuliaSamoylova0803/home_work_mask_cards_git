@@ -5,17 +5,14 @@ from typing import Any, Dict, List
 def filter_by_currency(transactions: List[Dict[str, Any]], currency: str = "USD") -> Generator[Dict[str, Any]]:
     """Функция должна возвращать итератор, который поочередно выдает транзакции,
     где валюта операции соответствует заданной (например, USD)"""
-    if transactions == []:
-        raise TypeError == ("Транзакции в заданной валюте отсутствуют")
-    elif transactions != []:
-        for transaction in transactions:
-            if transaction["operationAmount"]["currency"]["name"] == currency:
-                yield transaction
-
-
-# usd_transactions = filter_by_currency(transactions, "USD")
-# for _ in range(2):
-#     print(next(usd_transactions))
+    if len(transactions) > 0:
+        filtered_transactions = filter(
+            lambda transactions: transactions.get("operationAmount").get("currency").get("code") == currency,
+            transactions,
+        )
+        return filtered_transactions
+    else:
+        return "Список пустой!"
 
 
 def transaction_descriptions(transactions: List[Dict[Any, Any]]) -> Iterator[None]:
@@ -40,5 +37,5 @@ def card_number_generator(start: int, end: int) -> Generator[str, Any]:
             card_number = "0" + card_number
         yield f"{card_number[0:4]} {card_number[4:8]} {card_number[8:12]} {card_number[12:16]}"
 
-    for card_number in card_number_generator(1, 5):
-        return card_number
+    # for card_number in card_number_generator(1, 9999999999999999):
+    #     return card_number

@@ -40,9 +40,18 @@ def test_filter_by_currency(transactions, currency: str = "USD"):
     }
 
 
+@pytest.mark.parametrize(
+    "transactions, currency, expected", [([], "EUR", "Список пустой!"), ([], "RUB", "Список пустой!")]
+)
+def test_filter_by_currency_exceptions(transactions, currency, expected):
+    result = filter_by_currency(transactions, currency)
+    assert result == expected
+
+
 def test_filter_by_currency_empty() -> None:
     with pytest.raises(TypeError):
         filter_by_currency()
+
 
 def test_card_number_generator(start, end) -> str:
     card_number = card_number_generator(1, 9999999999999999)
@@ -52,7 +61,6 @@ def test_card_number_generator(start, end) -> str:
     assert next(card_number) == "0000 0000 0000 0004"
 
 
-
 def test_transaction_descriptions(transactions: list[dict[str, Any]]) -> str:
     trans = transaction_descriptions(transactions)
     assert next(trans) == "Перевод организации"
@@ -60,3 +68,9 @@ def test_transaction_descriptions(transactions: list[dict[str, Any]]) -> str:
     assert next(trans) == "Перевод со счета на счет"
     assert next(trans) == "Перевод с карты на карту"
     assert next(trans) == "Перевод организации"
+
+
+@pytest.mark.parametrize("description", ["Перевод организации"])
+def test_transaction_descriptions_(sample_transactions, description):
+    generator = transaction_descriptions(sample_transactions)
+    assert next(generator) == description
