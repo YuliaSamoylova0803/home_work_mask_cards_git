@@ -1,9 +1,9 @@
 from typing import Any, Dict, List
 
 
-def filter_by_state(list_dict: List[Dict[str, Any]], state: str = 'EXECUTED') -> List[Dict[str, Any]]:
+def filter_by_state(list_dict: List[Dict[str, Any]], state: str = "EXECUTED") -> List[Dict[str, Any]]:
     """Функция возвращает новый список словарей, содержащий только те словари, у которых ключ
-state соответствует указанному значению."""
+    state соответствует указанному значению."""
     new_list_dict = []
     for i in list_dict:
         if i.get("state") == state:
