@@ -2,6 +2,7 @@ from src.generators import card_number_generator, filter_by_currency, transactio
 from src.masks import get_mask_account, get_mask_card_number
 from src.processing import filter_by_state, sort_by_date
 from src.widget import get_date, mask_account_card
+from src.decorators import my_function, log
 
 print(get_mask_card_number(""))
 print(get_mask_account("45652659515194526295"))
@@ -249,3 +250,5 @@ for _ in range(5):
 card_number = card_number_generator(start=1, end=5)
 for card_number in card_number_generator(1, 5):
     print(card_number)
+
+print(my_function(1,'а'))

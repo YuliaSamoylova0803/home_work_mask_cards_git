@@ -26,7 +26,7 @@ def log(filename: Optional[str]=None) -> Callable:
                         file.write(f"{func.__name__} error: {error.__class__.__name__}. Inputs: {args}, {kwargs}\n")
                 else:
                     print(f"{func.__name__} error: {error.__class__.__name__}. Inputs: {args}, {kwargs}")
-                raise Exception(f"invalid literal for int() with base 10: 'a'")
+
         return wrapper
     return logging_decorator
 

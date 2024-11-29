@@ -26,3 +26,10 @@ my_function ok
 my_function ok
 my_function error: TypeError. Inputs: (), {}
 my_function error: ValueError. Inputs: (1, 'a'), {}
+my_function ok
+my_function error: TypeError. Inputs: (1,), {}
+my_function ok
+my_function ok
+my_function ok
+my_function error: ValueError. Inputs: (1, 'а'), {}
+my_function error: ValueError. Inputs: (1, 'а'), {}
