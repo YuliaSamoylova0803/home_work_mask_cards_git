@@ -1,0 +1,4 @@
+my_function error: ValueError. Inputs: (1, 'a'), {}
+my_function error: ValueError. Inputs: (1, 'a'), {}
+my_function error: ValueError. Inputs: (1, 'a'), {}
+my_function error: ValueError. Inputs: (1, 'a'), {}

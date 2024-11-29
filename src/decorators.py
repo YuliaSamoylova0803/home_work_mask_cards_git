@@ -26,7 +26,7 @@ def log(filename: Optional[str]=None) -> Callable:
                         file.write(f"{func.__name__} error: {error.__class__.__name__}. Inputs: {args}, {kwargs}\n")
                 else:
                     print(f"{func.__name__} error: {error.__class__.__name__}. Inputs: {args}, {kwargs}")
-                raise error
+                raise Exception(f"invalid literal for int() with base 10: 'a'")
         return wrapper
     return logging_decorator
 
@@ -52,7 +52,16 @@ def timer(func):
 @log(filename="my_logs.txt")
 def my_function(x: int | str, y: int | str) -> int:
     """Функция суммирует два числа и возвращает результат"""
-    return int(x) + int(y)
+    try:
+        return int(x) + int(y)
+    except ValueError as e:
+        print("Ошибка ввода! Пожалуйста, вводите только целые числа.")
+        raise e
+
+# @log(filename="my_logs.txt")
+# def my_function(x: int | str, y: int | str) -> int:
+#     """Функция суммирует два числа и возвращает результат"""
+#     return int(x) + int(y)
 
 my_function(1, 2)
 print(my_function(1,2))
