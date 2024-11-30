@@ -37,11 +37,6 @@ def test_log_in_file() -> None:
     assert data == "my_function ok"
 
 
-# def test_crash_log() -> None:
-#     with pytest.raises(ValueError, match="invalid literal for int() with base 10: 'a'"):
-#         result = my_function(1, "a")
-
-
 def test_log_invalid_type() -> None:
     @log(filename="log.txt")
     def my_function(x: int, y: int) -> int:

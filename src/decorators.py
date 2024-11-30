@@ -3,7 +3,7 @@ from typing import Any, Callable, Optional
 
 
 def log(filename: Optional[str] = None) -> Callable:
-    """Декоратор, который будет автоматически логировать начало и конец выполнения функции"""
+    """Декоратор, который может логировать работу функции и ее результат как в файл, так и в консоль."""
 
     def logging_decorator(func: Any) -> Any:
         @wraps(func)
@@ -23,7 +23,7 @@ def log(filename: Optional[str] = None) -> Callable:
                         file.write(f"{func.__name__} error: {error.__class__.__name__}. Inputs: {args}, {kwargs}\n")
                 else:
                     print(f"{func.__name__} error: {error.__class__.__name__}. Inputs: {args}, {kwargs}")
-                #raise error
+
         return wrapper
 
     return logging_decorator
@@ -39,5 +39,5 @@ def my_function(x: int | str, y: int | str) -> int:
         raise e
 
 
-# my_function(1, 2)
+my_function(1, "123")
 # print(my_function(1,2))

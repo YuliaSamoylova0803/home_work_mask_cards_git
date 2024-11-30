@@ -280,3 +280,49 @@ my_function error: ValueError. Inputs: (1, 'a'), {}
 my_function error: ValueError. Inputs: (1, 'a'), {}
 my_function ok
 my_function ok
+my_function error: ValueError. Inputs: (1, 'а'), {}
+my_function error: ValueError. Inputs: (1, 'a'), {}
+my_function error: ValueError. Inputs: (1, 'а'), {}
+my_function ok
+my_function ok
+my_function ok
+my_function ok
+my_function ok
+my_function ok
+my_function ok
+my_function ok
+my_function ok
+my_function ok
+my_function ok
+my_function ok
+my_function ok
+my_function ok
+my_function ok
+my_function ok
+my_function ok
+my_function ok
+my_function ok
+my_function error: TypeError. Inputs: ({}, []), {}
+my_function ok
+my_function error: TypeError. Inputs: ({}, []), {}
+my_function ok
+my_function error: TypeError. Inputs: ({}, []), {}
+my_function ok
+my_function error: TypeError. Inputs: ({}, []), {}
+my_function ok
+my_function error: TypeError. Inputs: (None, []), {}
+my_function ok
+my_function error: TypeError. Inputs: (None, None), {}
+my_function ok
+my_function error: TypeError. Inputs: (None, None), {}
+my_function ok
+my_function error: ValueError. Inputs: ('None', None), {}
+my_function ok
+my_function error: ValueError. Inputs: ('None', None), {}
+my_function ok
+my_function error: TypeError. Inputs: ((1, 2, 3), None), {}
+my_function ok
+my_function error: TypeError. Inputs: ((1, 2, 3), []), {}
+my_function ok
+my_function ok
+my_function ok

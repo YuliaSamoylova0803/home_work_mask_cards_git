@@ -251,4 +251,4 @@ card_number = card_number_generator(start=1, end=5)
 for card_number in card_number_generator(1, 5):
     print(card_number)
 
-print(my_function("%", "а"))
+print(my_function([], {}))
