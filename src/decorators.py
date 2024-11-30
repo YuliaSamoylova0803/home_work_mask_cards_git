@@ -1,12 +1,9 @@
-
 from functools import wraps
-from time import time
-from typing import Optional, Callable, Any
+from typing import Any, Callable, Optional
 
 
-def log(filename: Optional[str]=None) -> Callable:
-    """Декоратор, который будет автоматически логировать начало и конец выполнения функции
-    """
+def log(filename: Optional[str] = None) -> Callable:
+    """Декоратор, который будет автоматически логировать начало и конец выполнения функции"""
 
     def logging_decorator(func: Any) -> Any:
         @wraps(func)
@@ -26,8 +23,9 @@ def log(filename: Optional[str]=None) -> Callable:
                         file.write(f"{func.__name__} error: {error.__class__.__name__}. Inputs: {args}, {kwargs}\n")
                 else:
                     print(f"{func.__name__} error: {error.__class__.__name__}. Inputs: {args}, {kwargs}")
-
+                #raise error
         return wrapper
+
     return logging_decorator
 
 
@@ -43,4 +41,3 @@ def my_function(x: int | str, y: int | str) -> int:
 
 # my_function(1, 2)
 # print(my_function(1,2))
-

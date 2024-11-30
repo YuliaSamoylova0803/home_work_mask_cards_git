@@ -2,3 +2,9 @@ my_function ok
 my_function ok
 my_function error: TypeError. Inputs: (1, 'а'), {}
 my_function error: TypeError. Inputs: (1, 'а'), {}
+my_function ok
+my_function error: TypeError. Inputs: (1, 'а'), {}
+my_function error: TypeError. Inputs: (1, 'а'), {}
+my_function error: TypeError. Inputs: (1, 'а'), {}
+my_function ok
+my_function error: TypeError. Inputs: (1, 'а'), {}
