@@ -1,0 +1,27 @@
+my_function ok
+my_function ok
+my_function ok
+my_function ok
+my_function ok
+my_function ok
+my_function ok
+my_function ok
+my_function ok
+my_function ok
+my_function ok
+my_function ok
+my_function error: invalid literal for int() with base 10: 'a'. Inputs: (1, 'a'), {}my_function error: invalid literal for int() with base 10: 'a'. Inputs: (1, 'a'), {}my_function error: invalid literal for int() with base 10: 'a'. Inputs: (1, 'a'), {}my_function ok
+my_function error: ValueError. Inputs: (1, 'a'), {}
+my_function ok
+my_function error: ValueError. Inputs: (1, 'a'), {}
+my_function ok
+my_function error: ValueError. Inputs: (1, 'a'), {}
+my_function ok
+my_function error: ValueError. Inputs: (1, 'a'), {}
+my_function ok
+my_function error: ValueError. Inputs: (1, 'a'), {}
+my_function ok
+my_function error: ValueError. Inputs: (1, 'a'), {}
+my_function error: ValueError. Inputs: (1, 'a'), {}
+my_function error: ValueError. Inputs: (1, 'a'), {}
+my_function error: ValueError. Inputs: (1, 'a'), {}
