@@ -9,7 +9,6 @@ def get_currency_conversion(transaction: dict) -> float:
     RUB, USD, EUR"""
     load_dotenv(".env")
     apikey = os.getenv("API_KEY")
-    to = "RUB"
     payload = {}
     headers = {"apikey": apikey}
 
@@ -42,7 +41,8 @@ print(
     )
 )
 
-print(get_currency_conversion(
+print(
+    get_currency_conversion(
         {
             "id": 441945886,
             "state": "EXECUTED",
