@@ -18,7 +18,4 @@ def get_transaction_data(path: str) -> list[dict]:
         return returned_lict_data
 
 
-
-
-
-#print(get_transaction_data(path='data/operations.json'))
+print(get_transaction_data('data/operations.json'))

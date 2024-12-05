@@ -1,8 +1,12 @@
+from xml.etree.ElementTree import indent
+
 from src.decorators import my_function
 from src.generators import card_number_generator, filter_by_currency, transaction_descriptions
 from src.masks import get_mask_account, get_mask_card_number
 from src.processing import filter_by_state, sort_by_date
 from src.widget import get_date, mask_account_card
+from src.utils import get_transaction_data
+from src.external_api import get_currency_conversion
 
 print(get_mask_card_number(""))
 print(get_mask_account("45652659515194526295"))
@@ -251,4 +255,32 @@ card_number = card_number_generator(start=1, end=5)
 for card_number in card_number_generator(1, 5):
     print(card_number)
 
-print(my_function([], {}))
+#print(my_function([], {}))
+
+import json
+
+
+# with open('data/operations.json', encoding='utf-8') as f:
+#     data = json.load(f)
+#     print(data)
+
+
+print(get_transaction_data(path='data/operations.json'))
+print(get_transaction_data(path='data/empty.json'))
+print(get_transaction_data(path='data/dict.json'))
+
+print(get_currency_conversion({
+    "id": 441945886,
+    "state": "EXECUTED",
+    "date": "2019-08-26T10:50:58.294041",
+    "operationAmount": {
+      "amount": "31957.58",
+      "currency": {
+        "name": "руб.",
+        "code": "RUB"
+      }
+    },
+    "description": "Перевод организации",
+    "from": "Maestro 1596837868705199",
+    "to": "Счет 64686473678894779589"
+  }))
