@@ -17,7 +17,7 @@ def test_get_currency_conversion_usd(transaction_usd):
     mock_response.json.return_value == 838520.225503
 
 
-def test_get_currency_conversion_error():
+def test_get_currency_conversion_error_gbp():
     with pytest.raises(ValueError):
         get_currency_conversion(
             {
