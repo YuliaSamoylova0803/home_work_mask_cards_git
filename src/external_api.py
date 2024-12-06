@@ -17,9 +17,9 @@ def get_currency_conversion(transaction: dict) -> float:
     if currency == "RUB":
         return amount
     elif currency == "USD" or currency == "EUR":
-        url = f'https://api.apilayer.com/exchangerates_data/convert?to=RUB&from={currency}&amount={amount}'
+        url = f"https://api.apilayer.com/exchangerates_data/convert?to=RUB&from={currency}&amount={amount}"
         responce = requests.request("GET", url, headers=headers, data=payload)
-        result = round(responce.json()["result"], 2)
+        result = responce.json().get("result")
         return result
     else:
         raise ValueError("неподходящая валюта для конвертации")
