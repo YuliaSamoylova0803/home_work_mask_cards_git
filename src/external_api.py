@@ -1,4 +1,5 @@
 import os
+import json
 
 import requests
 from dotenv import load_dotenv
@@ -11,17 +12,14 @@ def get_currency_conversion(transaction: dict) -> float:
     apikey = os.getenv("API_KEY")
     payload = {}
     headers = {"apikey": apikey}
-
-    if transaction["operationAmount"]["currency"]["code"] == "RUB":
-        amount_str = float(transaction["operationAmount"]["amount"])
-        return amount_str
-    elif (
-        transaction["operationAmount"]["currency"]["code"] == "USD"
-        or transaction["operationAmount"]["currency"]["code"] == "EUR"
-    ):
-        url = f"https://api.apilayer.com/exchangerates_data/convert?to=RUB&from={transaction["operationAmount"]["currency"]["code"]}&amount={transaction["operationAmount"]["amount"]}"
+    currency = transaction["operationAmount"]["currency"]["code"]
+    amount = float(transaction["operationAmount"]["amount"])
+    if currency == "RUB":
+        return amount
+    elif currency == "USD" or currency == "EUR":
+        url = f'https://api.apilayer.com/exchangerates_data/convert?to=RUB&from={currency}&amount={amount}'
         responce = requests.request("GET", url, headers=headers, data=payload)
-        result = responce.json()
+        result = round(responce.json()["result"], 2)
         return result
     else:
         raise ValueError("неподходящая валюта для конвертации")
