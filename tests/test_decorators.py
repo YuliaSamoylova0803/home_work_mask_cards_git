@@ -42,6 +42,6 @@ def test_log_invalid_type() -> None:
         return x + y
 
     my_function(1, "а")
-    with open("log.txt") as f:
+    with open("log.txt", encoding="utf-8") as f:
         data = f.read().split("\n")[-2]
     assert data == "my_function error: TypeError. Inputs: (1, 'а'), {}"
