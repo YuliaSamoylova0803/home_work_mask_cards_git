@@ -6,12 +6,6 @@ def test_log_save_file():
     assert result == 4
 
 
-def test_log_console_ok(capsys):
-    return my_function(1, 2)
-    captured = capsys.readouterr()
-    assert captured.out == "my_function ok\n"
-
-
 def test_log_captured(capsys) -> None:
     @log(filename=None)
     def my_function(x: int, y: int) -> int:
