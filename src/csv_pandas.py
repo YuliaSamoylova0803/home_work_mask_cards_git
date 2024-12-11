@@ -1,7 +1,6 @@
 import os
-import csv
-import pandas as pd
 
+import pandas as pd
 
 # Получаем абсолютный путь до текущей директории
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -11,7 +10,7 @@ abs_src_file_path = os.path.abspath(rel_src_file_path)
 
 def get_csv_data(path_csv: str) -> list[dict]:
     """Функция для считывания финансовых операций из CSV выдает список словарей с транзакциями"""
-    returned_lict = []
+
     try:
         transactions_df = pd.read_csv(path_csv, delimiter=";", encoding="utf-8")
         result = transactions_df.to_dict(orient="records")
@@ -43,5 +42,6 @@ def get_excel_data(path_excel: str) -> list[dict]:
         return []
     excel_data = df.to_dict(orient="records")
     return excel_data
+
 
 print(get_excel_data(abs_src_file_path1))
