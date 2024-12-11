@@ -1,3 +1,4 @@
+from src.csv_pandas import get_csv_data, get_excel_data
 from src.external_api import get_currency_conversion
 from src.generators import card_number_generator, filter_by_currency, transaction_descriptions
 from src.masks import get_mask_account, get_mask_card_number
@@ -270,3 +271,10 @@ print(
         }
     )
 )
+
+
+print(get_csv_data(path_csv="data/transactions.csv"))
+print(get_csv_data(path_csv="data/empty.json"))
+
+print(get_excel_data("data/transactions_excel.xlsx"))
+print(get_excel_data(path_excel="data/none.json"))
