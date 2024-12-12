@@ -12,7 +12,7 @@ def test_get_trancsaction_data(list_json):
     assert get_transaction_data(rel_src_file_path) == list_json
 
 
-def test_get_trancsaction_data_empty():
+def test_get_c():
     assert get_transaction_data("data\\empty.json") == []
 
 
