@@ -63,10 +63,10 @@ def search_operation_by_str(operations: list[dict[str | Any]], string_search: st
     return search_operation
 
 
-#print(search_operation_by_str(transactions, "Перевод организации"))
+print(search_operation_by_str(transactions, "Перевод организации"))
 
 
-list_with_categories = ['Перевод организации', 'Перевод со счета на счет', 'Перевод с карты на карту', 'Перевод с карты на счет']
+list_with_categories = ['Перевод организации', 'Перевод со счета на счет', 'Перевод с карты на карту', 'Перевод с карты на счет', 'Открытие счета']
 transactions_2 = [
         {
             "id": 441945886,
@@ -274,4 +274,4 @@ def counter_descriptions(operations: list[dict[str|Any]], categories: list[str])
     counted_amount = Counter(description)
     return  counted_amount
 
-#print(counter_descriptions(transactions_2, list_with_categories))
+print(counter_descriptions(transactions_2, 'Перевод организации'))
