@@ -2,6 +2,7 @@ import os
 
 from src.csv_pandas import get_csv_data, get_excel_data
 from src.processing import filter_by_state, sort_by_date
+from src.servise import search_operation_by_str
 from src.utils import get_transaction_data
 from src.widget import get_date, mask_account_card
 
@@ -119,12 +120,9 @@ def main() -> None:
     user_search = input("Введите да или нет: ").lower()
 
     if user_search == "да":
-        sort_by_word_yes = input("Введите слово для фильтрации: ")
-        transactions_word = []
-        for trans in rub_transactions:
-            if sort_by_word_yes in trans["description"]:
-                transactions_word.append(trans)
-
+        sort_by_word_yes = input("Введите слово для фильтрации(Перевод организации(с карты на карту, с карты на счет,со счета на счет), Открытие счета): ").capitalize()
+        transactions_word = search_operation_by_str(rub_transactions, sort_by_word_yes)
+        #print(transactions_word)
     elif user_search == "нет":
         transactions_word = []
         for trans in rub_transactions:
