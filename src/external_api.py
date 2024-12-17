@@ -5,8 +5,8 @@ from dotenv import load_dotenv
 
 
 def get_currency_conversion(transaction: dict) -> float:
-    """Функция принимает на вход словарь с информацией о транзакции. Возвращает сумму транзакции в рублях. Поддерживает валюты
-    RUB, USD, EUR"""
+    """Функция принимает на вход словарь с информацией о транзакции. Возвращает сумму транзакции в рублях.
+    Поддерживает валюты RUB, USD, EUR"""
     load_dotenv(".env")
     apikey = os.getenv("API_KEY")
     payload = {}

@@ -122,7 +122,7 @@ def main() -> None:
     if user_search == "да":
         sort_by_word_yes = input("Введите слово для фильтрации(Перевод организации(с карты на карту, с карты на счет,со счета на счет), Открытие счета): ").capitalize()
         transactions_word = search_operation_by_str(rub_transactions, sort_by_word_yes)
-        #print(transactions_word)
+
     elif user_search == "нет":
         transactions_word = []
         for trans in rub_transactions:
