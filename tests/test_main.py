@@ -47,6 +47,3 @@ def test_main_6(mock_input):
 #     mock_word_yes.return_value = ''
 
 # assert main() == []
-
-
-
