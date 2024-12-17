@@ -49,13 +49,4 @@ def test_main_6(mock_input):
 # assert main() == []
 
 
-# @patch('src.main.user_search_word')
-# @patch('src.main.user_sort_option')
-# @patch('src.main.user_state_select')
-# @patch('src.main.user_file_select')
-# def test_main(mock_file_select, mock_stat_select, mock_sort_option, mock_user_search_word):
-#     mock_file_select.return_value = '2'
-#     mock_stat_select.return_value = 'CANCALED'
-#     mock_sort_option.return_value = 'ДА'
-#     mock_user_search_word.return_value = 'НА КАРТУ'
-#     assert main() == []
+

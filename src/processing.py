@@ -16,7 +16,3 @@ def sort_by_date(list_dict: List[Dict[str, Any]], reverse: bool = True) -> List[
     sorted_list_dict = []
     sorted_list_dict = sorted(list_dict, key=lambda x: x["date"], reverse=reverse)
     return sorted_list_dict
-
-
-
-
