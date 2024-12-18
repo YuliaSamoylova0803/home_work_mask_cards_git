@@ -18,12 +18,12 @@ def get_csv_data(path_csv: str) -> list[dict]:
 
     except FileNotFoundError:
         return []
-    except Exception as e:
+    except Exception:
         return []
 
 
-print(get_csv_data(abs_src_file_path))
-print(get_csv_data(path_csv="data/empty.json"))
+# print(get_csv_data(abs_src_file_path))
+# print(get_csv_data(path_csv="data/empty.json"))
 
 
 # Получаем абсолютный путь до текущей директории
@@ -44,4 +44,4 @@ def get_excel_data(path_excel: str) -> list[dict]:
     return excel_data
 
 
-print(get_excel_data(abs_src_file_path1))
+# print(get_excel_data(abs_src_file_path1))

@@ -37,4 +37,4 @@ def get_transaction_data(path: str) -> list[dict]:
         return returned_lict_data
 
 
-print(get_transaction_data(abs_src_file_path))
+# print(get_transaction_data(abs_src_file_path))
